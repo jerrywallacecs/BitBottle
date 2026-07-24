@@ -2,6 +2,10 @@
 
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
     Represents a bit-level file stream. BitFile wraps a standard FILE pointer
     and maintains the internal state required to read and write individual bits.
@@ -83,3 +87,7 @@ void CloseOutputBitFile(BitFile* bitFile);
     without appending a newline.
 */
 void FilePrintBinary(FILE* file, unsigned int code, int bits);
+
+#ifdef __cplusplus
+}
+#endif
